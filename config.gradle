@@ -1,0 +1,123 @@
+ext {
+
+    // 组件独立调试开关，每次更改值后要同步工程
+    isDebug = false
+
+    CompileSdkVersion = 31   // 用于编译的SDK版本
+    BuildToolsVersion = "30.0.3"  // 用于Gradle编译项目的工具版本
+
+    MinSdkVersion = 19    // 最低支持Android版本
+    TargetSdkVersion = 31 // 目标版本
+
+    VersionCode = 1      // 版本号
+    VersionName = "1.0.0"
+    MinifyEnabled = false //是否混淆
+
+    // 测试
+    junitVersion = "4.13.2"
+    runnerVersion = "1.1.3"
+    espressoVersion = "3.4.0"
+
+    // Jetpack
+    lifecycle_version = "2.4.1"
+    lifecycle_version_ext = "2.2.0"
+    navigation_version = "2.4.1"
+    room_version = "2.4.1"
+    paging_version = "3.1.0"
+    work_version = "2.7.1"
+
+    // kotlin
+    coroutines_version = "1.5.2"
+
+    // 网络编程相关
+    retrofit_version = "2.9.0"
+    gson_version = "2.9.0"
+    glide_version = "4.11.0"
+
+    //公共的(系统的)
+    roots = [
+            //项目基本的(每个项目需要的)
+//            "appcompatV7"               :   "com.android.support:appcompat-v7:${appcompatVersion}",
+//            "constraint"                :   "com.android.support.constraint:constraint-layout:${constraintVersion}",
+            "junit"   : "junit:junit:${junitVersion}",
+            "runner"  : "androidx.test.ext:junit:${runnerVersion}",
+            "espresso": "androidx.test.espresso:espresso-core:${espressoVersion}",
+            "material": "com.google.android.material:material:1.5.0",
+            "multidex": "androidx.multidex:multidex:2.0.1",
+    ]
+
+    im = [
+            lib_player      : ':giraffeplayer2',
+            ijkplayer_armv7a: ":ijkplayer-armv7a",
+            ijkplayer       : 'com.github.tcking:ijkplayer-java:0.8.8',
+    ]
+
+    androidx = [
+            "core_ktx"          : 'androidx.core:core-ktx:1.7.0',
+            "appcompat"         : 'androidx.appcompat:appcompat:1.3.0',
+            "testJunit"         : 'androidx.test.ext:junit:1.1.3',
+            "testEspresso"      : 'androidx.test.espresso:espresso-core:3.4.0',
+            "constraintlayout"  : 'androidx.constraintlayout:constraintlayout:2.0.4',
+            "swiperefreshlayout": 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0',
+    ]
+
+    rx = [
+            "rxandroid"                           : 'io.reactivex.rxjava2:rxandroid:2.1.1',
+            "rxjava"                              : 'io.reactivex.rxjava2:rxjava:2.2.21',
+            "rxlifecycle_components"              : 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2',
+            "rxlifecycle_android_lifecycle_kotlin": 'com.trello.rxlifecycle2:rxlifecycle-android-lifecycle-kotlin:2.2.2',
+    ]
+
+    kotlin_version = "1.6.10"
+    kotlins = [
+            "kotlin_stdlib"             : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
+            "kotlin_gradle_plugin"      : "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version",
+            "kotlinx_coroutines_core"   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version",
+            "kotlinx_coroutines_android": "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version",
+            "kotlin_reflect"            : "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version",
+    ]
+
+    ijkplayerVersion = "0.8.8"
+    ijkplayer = [
+            "ijkplayer_java"  : "tv.danmaku.ijk.media:ijkplayer-java:$ijkplayerVersion",
+            "ijkplayer_armv7a": "tv.danmaku.ijk.media:ijkplayer-armv7a:$ijkplayerVersion",
+            "ijkplayer_exo"   : "tv.danmaku.ijk.media:ijkplayer-exo:$ijkplayerVersion",
+    ]
+
+
+    jetpack = [
+            "lifecycle_livedata"         : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version",
+            "lifecycle_viewmodel"        : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
+            "lifecycle_extensions"       : "androidx.lifecycle:lifecycle-extensions:$lifecycle_version_ext",
+            "navigation_fragment"        : "androidx.navigation:navigation-fragment-ktx:$navigation_version",
+            "navigation_ui"              : "androidx.navigation:navigation-ui-ktx:$navigation_version",
+            "navigation_dynamic_features": "androidx.navigation:navigation-dynamic-features-fragment:$navigation_version",
+            "navigation_testing"         : "androidx.navigation:navigation-testing:$navigation_version",
+            "navigation_compose"         : "androidx.navigation:navigation-compose:$navigation_version",
+            // room
+            "room_runtime"               : "androidx.room:room-runtime:$room_version",
+            "room"                       : "androidx.room:room-ktx:$room_version",
+            "room_compiler"              : "androidx.room:room-compiler:$room_version",
+            "room_test"                  : "androidx.room:room-testing:$room_version",
+            "room_paging"                : "androidx.room:room-paging:$room_version",
+            // Paging
+            "paging_runtime"             : "androidx.paging:paging-runtime:$paging_version",
+            "work_runtime"               : "androidx.work:work-runtime-ktx:$work_version",
+    ]
+
+    network = [
+            // Retrofit
+            "retrofit2"     : "com.squareup.retrofit2:retrofit:$retrofit_version",
+            "converter_gson": "com.squareup.retrofit2:converter-gson:$gson_version",
+            // Glide
+            "glide"         : "com.github.bumptech.glide:glide:$glide_version",
+            "glide_compiler": "com.github.bumptech.glide:compiler:$glide_version",
+    ]
+
+    arouter_version = "1.5.2"
+    router = [
+            "arouter"         : "com.alibaba:arouter-api:$arouter_version",
+            "arouter_compiler": "com.alibaba:arouter-compiler:$arouter_version"
+    ]
+
+}

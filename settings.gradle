@@ -1,0 +1,25 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "WanAndroidComponent"
+include ':app'
+include ':libs'
+include ':libs:lib_base'
+include ':libs:lib_common'
+include ':libs:lib_application'
+include ':libs:lib_network'
+include ':module_main'
+include ':libs:lib_jetpack'
+include ':module_webview'
+include ':libs:lib_widgets'

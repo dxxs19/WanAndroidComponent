@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.x.lib_common'
+    compileSdk CompileSdkVersion
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    defaultConfig {
+        minSdk MinSdkVersion
+        targetSdk TargetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    api project(":libs:lib_base")
+    api project(":libs:lib_application")
+    api project(":libs:lib_network")
+    api project(":libs:lib_jetpack")
+    api project(":libs:lib_widgets")
+}

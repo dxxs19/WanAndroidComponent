@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android/Projects/WanAndroid/WanAndroidComponent/app/src/main/res/layout/activity_splash.xml" value="0.1" />
+        <entry key="..\:/Android/Projects/WanAndroid/WanAndroidComponent/module_main/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1755" />
+        <entry key="..\:/Android/Projects/WanAndroid/WanAndroidComponent/module_main/src/main/res/drawable/selector_item.xml" value="0.1585" />
+        <entry key="..\:/Android/Projects/WanAndroid/WanAndroidComponent/module_main/src/main/res/layout/activity_main.xml" value="0.17255434782608695" />
+        <entry key="..\:/Android/Projects/WanAndroid/WanAndroidComponent/module_main/src/main/res/layout/fragment_articles.xml" value="0.1875" />
+        <entry key="..\:/Android/Projects/WanAndroid/WanAndroidComponent/module_main/src/main/res/layout/fragment_blank.xml" value="0.1875" />
+        <entry key="..\:/Android/Projects/WanAndroid/WanAndroidComponent/module_main/src/main/res/layout/fragment_mine.xml" value="0.1875" />
+        <entry key="..\:/Android/Projects/WanAndroid/WanAndroidComponent/module_main/src/main/res/layout/fragment_project.xml" value="0.25" />
+        <entry key="..\:/Android/Projects/WanAndroid/WanAndroidComponent/module_main/src/main/res/layout/paging_item_article.xml" value="0.1875" />
+        <entry key="..\:/Android/Projects/WanAndroid/WanAndroidComponent/module_main/src/main/res/menu/bottom_nav_menu.xml" value="0.20364583333333333" />
+        <entry key="..\:/Android/Projects/WanAndroid/WanAndroidComponent/module_webview/src/main/res/layout/activity_main.xml" value="0.182518115942029" />
+      </map>
+    </option>
+  </component>
+</project>

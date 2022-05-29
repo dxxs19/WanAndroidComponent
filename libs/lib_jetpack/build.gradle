@@ -1,0 +1,65 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.x.lib_jetpack'
+    compileSdk CompileSdkVersion
+
+    defaultConfig {
+        minSdk MinSdkVersion
+        targetSdk TargetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    // Lifecycle
+    api jetpack.lifecycle_livedata
+    api jetpack.lifecycle_extensions
+    // ViewModel
+    api jetpack.lifecycle_viewmodel
+    // Navigation
+    api jetpack.navigation_fragment
+    api jetpack.navigation_ui
+    // Feature module Support
+    api jetpack.navigation_dynamic_features
+    // Testing Navigation
+//    androidTestImplementation jetpack.navigation_testing
+    // Jetpack Compose Integration
+//    implementation jetpack.navigation_compose
+    // Room
+    api jetpack.room_runtime
+    api jetpack.room
+    kapt jetpack.room_compiler
+    androidTestImplementation jetpack.room_test
+    api jetpack.room_paging
+    // Paging
+    api jetpack.paging_runtime
+
+    // material
+//    api roots.material
+    // 协程
+    api kotlins.kotlinx_coroutines_core
+    api kotlins.kotlinx_coroutines_android
+
+    api kotlins.kotlin_reflect
+}

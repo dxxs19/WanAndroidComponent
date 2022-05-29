@@ -1,0 +1,71 @@
+plugins {
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+def root = rootProject.ext
+if (root.isDebug) {
+    apply plugin : 'com.android.application'
+} else {
+    apply plugin : 'com.android.library'
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+android {
+    namespace 'com.x.module_main'
+    compileSdk CompileSdkVersion
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    defaultConfig {
+        if (root.isDebug) {
+            applicationId "com.x.module_main"
+        }
+        minSdk MinSdkVersion
+        targetSdk TargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        multiDexEnabled = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        resourcePrefix "main_"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+//    kotlinOptions {
+//        jvmTarget = '1.8'
+//    }
+
+    sourceSets {
+        main {
+            if (root.isDebug) {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
+        }
+    }
+}
+
+dependencies {
+
+    // 路由
+    implementation router.arouter
+    kapt router.arouter_compiler
+    implementation project(":libs:lib_common")
+}
